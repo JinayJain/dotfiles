@@ -1,0 +1,4 @@
+URxvt.font: xft:Source Code Pro:size=12
+URxvt.scrollBar: false
+URxvt.internalBorder:  12
+URxvt.background: rgb:1E/1F/29
