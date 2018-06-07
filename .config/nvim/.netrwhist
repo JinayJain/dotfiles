@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/jinay/.config/i3'
+let g:netrw_dirhist_2='/home/jinay/.config/pulse'
+let g:netrw_dirhist_3='/home/jinay/.oh-my-zsh'
+let g:netrw_dirhist_4='/home/jinay/.config/i3'
+let g:netrw_dirhist_5='/home/jinay/.config'
