@@ -12,7 +12,8 @@ Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
+Plug 'dylanaraps/wal.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 
@@ -23,7 +24,7 @@ call plug#end()
 " Editor Values
 
 let base16colorspace=256
-colorscheme base16-snazzy
+colorscheme wal
 syntax on
 
 set rnu
@@ -42,6 +43,7 @@ let mapleader=" "
 inoremap kj <Esc>
 noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
 map <leader>w <Plug>(easymotion-bd-w)
+map <leader>l <Plug>(easymotion-bd-jk)
 
 " Plugin Values
 

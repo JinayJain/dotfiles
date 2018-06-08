@@ -95,7 +95,6 @@ function chpwd() {
 }
 
 bindkey -s '^o' '^Uranger^M'
-export PATH="/home/jinay/miniconda2/bin:$PATH"
 # aliases
 alias sagi="sudo apt-get install"
 alias sagr="sudo apt-get remove"
@@ -110,6 +109,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias i3conf="vim ~/.config/i3/config"
 alias vimrc="vim ~/.config/nvim/init.vim"
 alias zshrc="vim ~/.zshrc"
+alias walr="wal -i $HOME/Pictures/Wallpapers"
 #alias Xresources="vim ~/.Xresources"
 #alias termiteconf="vim ~/.config/termite/config"
 #alias Xdefaults="vim ~/.Xdefaults"
@@ -133,16 +133,7 @@ export EDITOR=nvim
 # NO NO NO, UNLESS IT IS SOMETHING TO BE PRINTED
 # -------------------------------
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+(cat ~/.cache/wal/sequences &)
 
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \

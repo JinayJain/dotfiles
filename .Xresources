@@ -1,4 +1,4 @@
-URxvt.font: xft:Source Code Pro:size=12
+URxvt.font: xft:SauceCodePro Nerd Font:size=12:antialias=true:hinting=true
+URxvt.letterSpace: 1
 URxvt.scrollBar: false
 URxvt.internalBorder:  12
-URxvt.background: rgb:1E/1F/29
