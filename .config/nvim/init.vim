@@ -36,12 +36,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set incsearch
 
 let mapleader=" "
 
 " Keybinds
 inoremap kj <Esc>
-noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
+autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
 map <leader>w <Plug>(easymotion-bd-w)
 map <leader>l <Plug>(easymotion-bd-jk)
 

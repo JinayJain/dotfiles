@@ -36,7 +36,7 @@ bindsym $mod+Shift+i exec opera
 
 # Open ranger in scratchpad
 for_window [instance="ranger"] move window to scratchpad, scratchpad show
-bindsym $mod+Shift+f exec urxvt -name ranger -e zsh -i -c 'ranger'
+bindsym $mod+Shift+f exec --no-startup-id urxvt -name ranger -e zsh -i -c 'ranger'
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -48,16 +48,20 @@ bindsym $mod+d exec --no-startup-id dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf 
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+bindsym $mod+Shift+p exec --no-startup-id i3lock-fancy
 
 # Start i3-gaps
 
 for_window [class="^.*"] border pixel 2
+# Hide edges on single window workspaces
+hide_edge_borders smart
 
 set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $bg i3wm.color0 #f0f0f0
+set_from_resource $pr i3wm.color4 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused          $bg     $bg     $fg  $pr       $pr
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
@@ -66,7 +70,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 gaps inner 15
-smart_gaps on
+#smart_gaps on
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -122,8 +126,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1 "
-set $workspace2 "2 "
+set $workspace1 "1"
+set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
@@ -131,7 +135,7 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10 "
+set $workspace10 "10"
 
 
 # switch to workspace
@@ -193,10 +197,7 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    position bottom
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #bar {
     #position top
@@ -205,7 +206,7 @@ bar {
 #}
 
 # Pulse Audio controls
-bindsym XF86AudioMute exec amixer set Master toggle;  exec pkill  -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -D pulse set Master Playback toggle;  exec pkill  -RTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec pkill  -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec pkill  -RTMIN+10 i3blocks
 
