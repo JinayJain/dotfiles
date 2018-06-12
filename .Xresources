@@ -1,7 +1,12 @@
+! Fonts
 URxvt.font: xft:Hasklug Nerd Font Mono:size=12:antialias=true:hinting=true
 URxvt.letterSpace: 1
-URxvt.scrollBar: false
-URxvt.internalBorder:  12
+
+! Clickable URLs
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
+
+! Other modifications
+URxvt.scrollBar: false
+URxvt.internalBorder:  12

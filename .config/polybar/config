@@ -21,7 +21,7 @@ font-0 = DroidSansMono Nerd Font Mono:size=12;2
 
 modules-left = i3
 modules-center = date
-modules-right = volume mpris
+modules-right = filesystem volume mpris
 
 tray-position = right
 
@@ -67,4 +67,5 @@ format-volume = <ramp-volume> <label-volume>
 ramp-volume-0 = 奔 
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
+
 ; vim:ft=dosini

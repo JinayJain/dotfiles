@@ -32,7 +32,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 
 # Opera
-bindsym $mod+Shift+i exec opera
+bindsym $mod+Shift+i exec qutebrowser
 
 # Open ranger in scratchpad
 for_window [instance="ranger"] move window to scratchpad, scratchpad show

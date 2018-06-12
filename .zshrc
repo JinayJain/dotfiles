@@ -96,11 +96,6 @@ function chpwd() {
 
 bindkey -s '^o' '^Uranger^M'
 # aliases
-alias sagi="sudo apt-get install"
-alias sagr="sudo apt-get remove"
-alias sagar="sudo apt-get autoremove"
-alias sagu="sudo apt-get update"
-alias sagp="sudo apt-get purge"
 alias vi="nvim"
 alias vim="nvim"
 alias oldvim="/usr/bin/vim"

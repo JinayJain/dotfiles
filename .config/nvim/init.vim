@@ -43,13 +43,12 @@ let mapleader=" "
 " Keybinds
 inoremap kj <Esc>
 autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
-map <leader>w <Plug>(easymotion-bd-w)
 map <leader>l <Plug>(easymotion-bd-jk)
 
 " Plugin Values
 
 " Vim HardTime
-let g:hardtime_default_on = 1
+"let g:hardtime_default_on = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode='c'
