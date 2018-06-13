@@ -219,4 +219,4 @@ focus_follows_mouse no
 # Start programs at boot
 
 exec --no-startup-id wal -i $HOME/Pictures/Wallpapers
-exec --no-startup-id redshift
+exec --no-startup-id redshift -b 0.9:0.7 -t 5500:3500 -l 39.78:-75.68

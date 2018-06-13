@@ -123,10 +123,12 @@ setopt correct
 # EXPORTS
 export EDITOR=nvim
 
-# DON'T INSERT ANYTHING AFTER THIS
-# -------------------------------
-# NO NO NO, UNLESS IT IS SOMETHING TO BE PRINTED
-# -------------------------------
+# -------------------------------------
+# Random commands to enable certain things (like wal and smart completion)
+# -------------------------------------
+
+. /usr/share/fzf/completion.zsh
+. /usr/share/fzf/key-bindings.zsh
 
 (cat ~/.cache/wal/sequences &)
 

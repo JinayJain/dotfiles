@@ -2,9 +2,12 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-jedi'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+Plug 'vim-latex/vim-latex'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -17,11 +20,10 @@ Plug 'dylanaraps/wal.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 
-Plug 'takac/vim-hardtime'
-
 call plug#end()
 
 " Editor Values
+
 
 let base16colorspace=256
 colorscheme wal
@@ -41,14 +43,22 @@ set incsearch
 let mapleader=" "
 
 " Keybinds
+
+" Exit insert mode with kj
 inoremap kj <Esc>
-autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
+" Move around easymotion lines with <leader>l
 map <leader>l <Plug>(easymotion-bd-jk)
+
+" Running
+autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
+autocmd FileType python noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! python %:t:r.py<CR>
+autocmd FileType rmd noremap <leader>rr :!Rscript -e "rmarkdown::render('%:t', clean=TRUE)"<CR>
 
 " Plugin Values
 
-" Vim HardTime
-"let g:hardtime_default_on = 1
+" Vim Markdown 
+
+let g:vim_markdown_folding_disabled = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode='c'
@@ -61,6 +71,7 @@ let g:comfortable_motion_air_drag = 0.0
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 1
 let g:deoplete#num_processes = 1
+
 
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
