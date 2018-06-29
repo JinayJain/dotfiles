@@ -46,7 +46,7 @@ type = internal/date
 interval = 1.0
 
 date = %A %D
-time = %T
+time = %r
 
 format = <label>
 label = %date% %time%

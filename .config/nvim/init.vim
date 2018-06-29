@@ -24,9 +24,9 @@ call plug#end()
 
 " Editor Values
 
+let mapleader=" "
 
-let base16colorspace=256
-colorscheme wal
+filetype plugin on
 syntax on
 
 set rnu
@@ -40,7 +40,9 @@ set expandtab
 
 set incsearch
 
-let mapleader=" "
+let base16colorspace=256
+colorscheme wal
+
 
 " Keybinds
 
@@ -49,10 +51,14 @@ inoremap kj <Esc>
 " Move around easymotion lines with <leader>l
 map <leader>l <Plug>(easymotion-bd-jk)
 
-" Running
+" Running/Compiling with <leader>rr
 autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
 autocmd FileType python noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! python %:t:r.py<CR>
 autocmd FileType rmd noremap <leader>rr :!Rscript -e "rmarkdown::render('%:t', clean=TRUE)"<CR>
+
+" Open the PDF associated with the file
+
+autocmd FileType rmd,md,plaintex,tex noremap <leader>p :!mupdf %:t:r.pdf &<CR><CR>
 
 " Plugin Values
 

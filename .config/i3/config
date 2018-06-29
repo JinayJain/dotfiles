@@ -32,7 +32,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 
 # Opera
-bindsym $mod+Shift+i exec qutebrowser
+bindsym $mod+Shift+i exec --no-startup-id opera
 
 # Open ranger in scratchpad
 for_window [instance="ranger"] move window to scratchpad, scratchpad show
@@ -220,3 +220,4 @@ focus_follows_mouse no
 
 exec --no-startup-id wal -i $HOME/Pictures/Wallpapers
 exec --no-startup-id redshift -b 0.9:0.7 -t 5500:3500 -l 39.78:-75.68
+exec --no-startup-id dunst
