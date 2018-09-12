@@ -34,6 +34,9 @@ bindsym $mod+Return exec urxvt
 # Opera
 bindsym $mod+Shift+i exec --no-startup-id opera
 
+# Open Gym Environments in a floating window
+for_window [class="main.py"] floating enable
+
 # Open ranger in scratchpad
 for_window [instance="ranger"] move window to scratchpad, scratchpad show
 bindsym $mod+Shift+f exec --no-startup-id urxvt -name ranger -e zsh -i -c 'ranger'
@@ -218,6 +221,7 @@ bindsym XF86AudioPrev exec playerctl previous
 focus_follows_mouse no
 # Start programs at boot
 
+exec-always --no-startup-id setxkbmap -option compose:ralt
 exec --no-startup-id wal -i $HOME/Pictures/Wallpapers
 exec --no-startup-id redshift -b 0.9:0.7 -t 5500:3500 -l 39.78:-75.68
 exec --no-startup-id dunst

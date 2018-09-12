@@ -51,6 +51,9 @@ inoremap kj <Esc>
 " Move around easymotion lines with <leader>l
 map <leader>l <Plug>(easymotion-bd-jk)
 
+" C/C++ commenting options
+au FileType c,cpp setlocal comments-=:// comments+=f://
+
 " Running/Compiling with <leader>rr
 autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
 autocmd FileType python noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! python %:t:r.py<CR>
