@@ -85,7 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export TERM="xterm-256color"
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH=$PATH:/home/jinay/Android/flutter/bin
 bindkey -s '^k' '^Ucd ..^M'
 bindkey "^ " autosuggest-accept
 
@@ -94,7 +95,7 @@ function chpwd() {
     ls -a
 }
 
-bindkey -s '^o' '^Uranger^M'
+bindkey -s '^o' 'vifm^M'
 # aliases
 alias vi="nvim"
 alias vim="nvim"
@@ -105,6 +106,8 @@ alias i3conf="vim ~/.config/i3/config"
 alias vimrc="vim ~/.config/nvim/init.vim"
 alias zshrc="vim ~/.zshrc"
 alias walr="wal -i $HOME/Pictures/Wallpapers"
+alias pip="pip3"
+alias play="aplay -D pulse"
 #alias Xresources="vim ~/.Xresources"
 #alias termiteconf="vim ~/.config/termite/config"
 #alias Xdefaults="vim ~/.Xdefaults"
@@ -113,7 +116,6 @@ alias walr="wal -i $HOME/Pictures/Wallpapers"
 #alias down="cd ~/Downloads"
 #alias dev="cd ~/Dev"
 #alias c.="code ."
-alias sp=". spv2"
 
 #(wal -t -q &)
 #cat /home/jinay/.cache/wal/sequences
@@ -136,3 +138,4 @@ zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh

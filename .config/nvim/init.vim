@@ -8,6 +8,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'vim-latex/vim-latex'
+Plug 'sophacles/vim-processing'
 
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -17,8 +18,8 @@ Plug 'scrooloose/nerdcommenter'
 
 "Plug 'chriskempson/base16-vim'
 Plug 'dylanaraps/wal.vim'
-Plug 'yuttie/comfortable-motion.vim'
-Plug 'easymotion/vim-easymotion'
+"Plug 'yuttie/comfortable-motion.vim'
+"Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -52,16 +53,21 @@ inoremap kj <Esc>
 map <leader>l <Plug>(easymotion-bd-jk)
 
 " C/C++ commenting options
-au FileType c,cpp setlocal comments-=:// comments+=f://
+autocmd FileType c,cpp setlocal comments-=:// comments+=f://
 
-" Running/Compiling with <leader>rr
-autocmd FileType cpp noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
-autocmd FileType python noremap <leader>rr :sp %:t:r.tmp<CR>:terminal! python %:t:r.py<CR>
-autocmd FileType rmd noremap <leader>rr :!Rscript -e "rmarkdown::render('%:t', clean=TRUE)"<CR>
+" Running/Compiling with <F5>
+autocmd FileType cpp noremap <F5> :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
+autocmd BufNewFile,BufRead *.in,*.out noremap <F5> :sp %:t:r.tmp<CR>:terminal! runcpp %:t:r < %:t:r.in<CR>
+autocmd BufNewFile,BufRead *.in,*.out noremap <leader>s :e %:t:r.cpp<CR>
+autocmd BufNewFile,BufRead *.cpp noremap <leader>s :e %:t:r.in<CR>
+autocmd FileType python noremap <F5> :sp %:t:r.tmp<CR>:terminal! python %:t:r.py<CR>
+autocmd FileType rmd noremap <F5> :!Rscript -e "rmarkdown::render('%:t', output_format='all', clean=TRUE)"<CR>
+autocmd FileType tex noremap <F5> :!pdflatex %:t<CR>
+autocmd FileType tex noremap <leader>rb :!biber %:t:r<CR>
 
 " Open the PDF associated with the file
 
-autocmd FileType rmd,md,plaintex,tex noremap <leader>p :!mupdf %:t:r.pdf &<CR><CR>
+autocmd FileType rmd,md,plaintex,tex noremap <leader>p :!zathura %:t:r.pdf &<CR><CR>
 
 " Plugin Values
 
@@ -70,7 +76,7 @@ autocmd FileType rmd,md,plaintex,tex noremap <leader>p :!mupdf %:t:r.pdf &<CR><C
 let g:vim_markdown_folding_disabled = 1
 
 " CtrlP
-let g:ctrlp_working_path_mode='c'
+let g:ctrlp_working_path_mode='a'
 
 " Comfortable Motion
 let g:comfortable_motion_friction = 200.0
